@@ -13,11 +13,11 @@
 + To add more features I divided the datetime in month, day, year and hour and also transformed the season and weather features to categorical
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-+ Model performed better after adding the additional features. RMSE score reduced from 1.78821 to  0.6561. Which is around 63% improvement.I think this happened because additional features proved to be good predictors of target value in this case.
++ Model performed better after adding the additional features. RMSE score reduced from 1.81842 to  0.68777. Which is around 63% improvement.I think this happened because additional features proved to be good predictors of target value in this case.
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
-+ Hyper parameter tuning didn't help much, the RMSE score was found to be degraded as RMSE score increased from 0.6561(EDA) to 1.26426(hyper parameter tuning)
++ Hyper parameter tuning enhanced the model further, the RMSE score was found to be improved as RMSE score decreased from 0.68777(EDA) to 0.52694(hyper parameter tuning)
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
 + I would spend my time by evaluating using different model algorithms like Random Forest, XGBoost etc. Choose the best among these models and do hyper parameter tuning to further improve the results. I would also try to perform feature engineering dropping irrelevant features, feature scaling etc. I would compare my model against the best performing model on kaggle and will try to reach the benchmark. 
@@ -28,9 +28,10 @@
 
 |model|hpo1|hpo2|hpo3|score|
 |--|--|--|--|--|
-|initial|default_vals|default_vals|default_vals|1.78821|
-|add_features|default_vals|default_vals|default_vals|0.6561|
-|hpo|num_leaves: lower=26, upper=66|dropout_prob: 0.0, 0.5|num_boost_round: 100|1.26426|
+|initial|default_vals|default_vals|default_vals|1.81842|
+|add_features|default_vals|default_vals|default_vals|0.68777|
+|hpo|num_leaves: lower=26, upper=66|dropout_prob: 0.0, 0.5|num_boost_round: 100|0.52694|
+<!-- 1.81842, 0.68777 , 0.52694 -->
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 + Line plot showing the top model score for the three (or more) training runs
@@ -49,7 +50,7 @@
 
 + The following step was to conduct EDA and analyse data patterns in features. Based on the plots, I decided to engineer existing features by changing the dtype from numeric to categorical and adding new features to capture time element information for each record. The model was then trained, which improved the RMSE Kaggle score on test data by more than 60%.
 
-+ After hyperprameter tuning the model degraded as it's RMSE score on kaggle was increased. I think with more options for hyperparameters and increased duration for model training I can get better model score.
++ After hyperprameter tuning the model improved as it's RMSE score on kaggle was decreased. I think with more options for hyperparameters and increased duration for model training I can get even better model score.
 
 + Finally, I compared the Kaggle scores of all trained models and plotted these scores against hyperparameter settings to assess relative performance improvement or degradation.
 
